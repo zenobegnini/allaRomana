@@ -31,7 +31,7 @@ export class TransactionService {
     let response = await axios.get(
       this.baseUrl + '/api/collections/Transactions/records'
     );
-    let allTransactionAL: Transaction[] = response.data;
+    let allTransactionAL: Transaction[] = response.data.items;
     return allTransactionAL;
   }
 

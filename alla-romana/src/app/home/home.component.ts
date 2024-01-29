@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { Transaction } from '../../models/transaction';
+import { TransactionService } from '../services/transaction.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,7 +14,16 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  transactions: any[] = [1, 2, 3, 4]
+  readonly transactionService: TransactionService;
+  transactions: Transaction[] = []
 
+  constructor(transactionService: TransactionService) {
+    this.transactionService = transactionService
+  }
+
+  async ngOnInit() {
+    this.transactions = await this.transactionService.getAllTransaction();
+    console.log(this.transactions);
+  }
 
 }
