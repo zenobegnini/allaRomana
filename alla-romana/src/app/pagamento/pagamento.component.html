@@ -1,20 +1,35 @@
 <div class="pagamento">
+    <h1>
+        Nuova transazione
+    </h1>
     <mat-form-field class="example-form-field">
-        <mat-label>Clearable input</mat-label>
-        <input matInput type="text" [(ngModel)]="import">
-        @if (import) {
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="import=0">
-            <mat-icon>close</mat-icon>
-        </button>
-        }
+        <mat-label>Importo</mat-label>
+        <input matInput type="number" [(ngModel)]="import">
+
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label>Titolo</mat-label>
+        <input matInput type="text" [(ngModel)]="title">
+
     </mat-form-field>
     <div class="users-list">
+        <h2>Utenti</h2>
         @for (user of users; track $index) {
-        <p><mat-checkbox [(ngModel)]="payUser[user.id]"> Utente</mat-checkbox></p>
-        <p>
-            import
-        </p>
+        <div class="user-checkbox">
+            <mat-checkbox [(ngModel)]="payUser[user.id]">
+            </mat-checkbox>
+            <div class="user">
+                <p class="user">
+                    Utente
+                </p>
+                <p class="import">
+                    Importo
+                </p>
+            </div>
+        </div>
+        <div class="divider"></div>
         }
+
     </div>
     <div class="footer">
         <button mat-stroked-button>Annulla</button>

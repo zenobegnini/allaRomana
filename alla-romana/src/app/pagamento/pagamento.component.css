@@ -1,0 +1,58 @@
+div.pagamento{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 20px;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+mat-form-field{
+    width: 100%;
+}
+div.users-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+div.user-checkbox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+div.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+p.user{
+    font-size: 18px;
+}
+p.import{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+div.footer{
+    display: flex;
+    gap: 4px;
+    margin-top: auto;
+
+}
+
+button{
+    width: 100%;
+}
+
+div.divider{
+    width: 100%;
+    height: 1px;
+    background-color: #ededed;
+}

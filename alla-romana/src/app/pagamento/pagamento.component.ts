@@ -16,6 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 })
 export class PagamentoComponent {
   public import: number = 0
+  public title!: string
   checked = false;
   public users: any[] = [{
     id: '1'
