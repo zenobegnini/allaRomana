@@ -1,1 +1,41 @@
-<p routerLink="/pagamento">home works!</p>
+<!-- <table>
+    <th>Utente</th>
+    <th>Titolo transazione</th>
+    <th>Importo</th>
+    <tr *ngFor="let t of transactions" >
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+
+</table> -->
+<div class="home">
+
+<h1>
+    Transazioni
+</h1>
+<div class="transactions-list">
+
+<div class="container" *ngFor="let transaction of transactions">
+    <div class="content">
+        <h4>
+            titolo
+        </h4>
+        <p class="user">
+            utente
+        </p>
+
+    </div>
+    <p class="import">
+        importo
+    </p>
+</div>
+<mat-divider></mat-divider>
+</div>
+
+<button routerLink="/pagamento" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

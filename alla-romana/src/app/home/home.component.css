@@ -1,0 +1,25 @@
+div.home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+}
+
+div.transactions-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+div.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+div.content{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
