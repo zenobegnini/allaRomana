@@ -20,7 +20,7 @@
             </mat-checkbox>
             <div class="user">
                 <p class="user">
-                    Utente
+                    {{user.username}}
                 </p>
                 <p class="import">
                     Importo
@@ -32,8 +32,8 @@
 
     </div>
     <div class="footer">
-        <button mat-stroked-button>Annulla</button>
-        <button mat-raised-button color="primary">Conferma</button>
+        <button mat-stroked-button routerLink="/home">Annulla</button>
+        <button mat-raised-button color="primary" routerLink="/home">Conferma</button>
     </div>
 
 </div>

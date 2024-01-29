@@ -7,7 +7,7 @@ import { Transaction } from '../../models/transaction';
   providedIn: 'root',
 })
 export class TransactionService {
-  baseUrl: string = 'http://127.0.0.1:8090/';
+  baseUrl: string = 'http://127.0.0.1:8090';
 
   constructor() {}
 
@@ -15,7 +15,7 @@ export class TransactionService {
     let response = await axios.get(
       this.baseUrl + '/api/collections/Users/records'
     );
-    let allUsersAL: User[] = response.data;
+    let allUsersAL: User[] = response.data.items;
     return allUsersAL;
   }
   
