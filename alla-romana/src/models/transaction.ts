@@ -1,8 +1,8 @@
 export interface Transaction {
-    id: string;
-    creditorId: string;
-    debitorId: string;
-    payment: string;
+    id?: string;
+    creditor_id: string;
+    debitor_id: string;
+    payment: number;
     title: string;
     description: string;
 }

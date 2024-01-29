@@ -24,6 +24,7 @@ export class TransactionService {
       this.baseUrl + '/api/collections/Users/records/' + id
     );
     let userById: User = response.data;
+    console.log(userById)
     return userById;
   }
 
@@ -48,8 +49,8 @@ export class TransactionService {
 
   async insertTransaction(transaction: Transaction): Promise<void> {
     await axios.post(this.baseUrl + '/api/collections/Transactions/records', {
-      creditor_id: transaction.creditorId,
-      debitor_id: transaction.debitorId,
+      creditor_id: transaction.creditor_id,
+      debitor_id: transaction.debitor_id,
       payment: transaction.payment,
       title: transaction.title,
       description: transaction.description

@@ -2,28 +2,44 @@
     <h1>
         Nuova transazione
     </h1>
+
+    @if(users) {
+        <mat-form-field>
+            <mat-label>user</mat-label>
+            <mat-select [(value)]="currentUser">
+              @for (user of users; track user) {
+                <mat-option [value]="user.id">{{user.username}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+    }
+
+
     <mat-form-field class="example-form-field">
         <mat-label>Importo</mat-label>
-        <input matInput type="number" [(ngModel)]="import">
+        <input matInput type="number" [(ngModel)]="import" (ngModelChange)="payDivded()">
 
     </mat-form-field>
     <mat-form-field class="example-form-field">
         <mat-label>Titolo</mat-label>
-        <input matInput type="text" [(ngModel)]="title">
+        <input matInput type="text" [(ngModel)]="title" >
 
     </mat-form-field>
     <div class="users-list">
         <h2>Utenti</h2>
         @for (user of users; track $index) {
         <div class="user-checkbox">
-            <mat-checkbox [(ngModel)]="payUser[user.id]">
+            <mat-checkbox [(ngModel)]="payUser[user.id]" (change)="payDivded()">
             </mat-checkbox>
             <div class="user">
                 <p class="user">
                     {{user.username}}
                 </p>
+            
                 <p class="import">
-                    Importo
+                    @if (payUser[user.id]) {
+                        {{importDivided.toFixed(2)}} €
+                    }
                 </p>
             </div>
         </div>
@@ -33,7 +49,7 @@
     </div>
     <div class="footer">
         <button mat-stroked-button routerLink="/home">Annulla</button>
-        <button mat-raised-button color="primary" routerLink="/home">Conferma</button>
+        <button mat-raised-button color="primary" routerLink="/home" (click)="createTransaction()">Conferma</button>
     </div>
 
 </div>

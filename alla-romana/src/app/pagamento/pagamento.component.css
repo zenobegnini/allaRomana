@@ -6,6 +6,7 @@ div.pagamento{
     margin-top: 20px;
     height: 100%;
     box-sizing: border-box;
+    position: relative;
 
 }
 

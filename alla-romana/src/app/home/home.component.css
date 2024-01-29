@@ -11,6 +11,9 @@ div.transactions-list{
     display: flex;
     flex-direction: column;
     gap: 8px;
+    overflow: auto;
+    max-height: 80%;
+    scrollbar-width: none;
 }
 div.container{
     display: flex;

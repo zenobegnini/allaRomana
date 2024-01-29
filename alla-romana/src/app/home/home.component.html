@@ -1,24 +1,28 @@
+
+@if (transactions) {
 <div class="home">
     <h1>
         Transazioni
     </h1>
     <div class="transactions-list">
         @for (transaction of transactions; track $index) {
-        <div class="container">
-            <div class="content">
-                <h4>
-                    titolo
-                </h4>
-                <p class="user">
-                    utente
-                </p>
-
-            </div>
-            <p class="import">
-                importo
-            </p>
-        </div>
-        <mat-divider></mat-divider>
+            @if(transaction.creditor_id != transaction.debitor_id) {
+                <div class="container">
+                    <div class="content">
+                        <h4>
+                            {{ transaction.title }}
+                        </h4>
+                        <p class="user">
+                            {{getUsername(transaction.creditor_id)}} => {{getUsername(transaction.debitor_id)}}
+                        </p>
+        
+                    </div>
+                    <p class="import">
+                        {{transaction.payment.toFixed(2)}} €
+                    </p>
+                </div>
+                <mat-divider></mat-divider>
+            }
         }
     </div>
 
@@ -26,3 +30,4 @@
         <mat-icon>add</mat-icon>
     </button>
 </div>
+}
